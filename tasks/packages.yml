@@ -1,42 +1,38 @@
 ---
 
-#- debug: msg="{{ansible_os_family}}"
+#- debug: msg="{{ ansible_os_family }}"
 
 # FreeBSD
 - name: Install packages
   pkgng: >
-    name="{{item}}"
+    name="{{ item }}"
     state="present"
-  with_items: "{{rsnapshot_packages}}"
+  with_items: "{{ rsnapshot_packages }}"
   when: (ansible_os_family == "FreeBSD") and (freebsd_install_method == "packages")
-  tags: packages
 
 - name: Install ports
   portinstall: >
-    name="{{item}}"
+    name="{{ item }}"
     state="present"
-    use_packages="{{freebsd_use_packages}}"
-  with_items: "{{rsnapshot_packages}}"
+    use_packages="{{ freebsd_use_packages }}"
+  with_items: "{{ rsnapshot_packages }}"
   when: (ansible_os_family == "FreeBSD") and (freebsd_install_method == "ports")
-  tags: ports
 
 # Debian
 - name: Install packages
   apt: >
-    name="{{item}}"
+    name="{{ item }}"
     state="installed"
-  with_items: "{{rsnapshot_packages}}"
+  with_items: "{{ rsnapshot_packages }}"
   when: ansible_os_family == "Debian"
-  tags: packages
         
 # RedHat
 - name: Install packages
   yum: >
-    name="{{item}}"
+    name="{{ item }}"
     state="installed"
-  with_items: "{{rsnapshot_packages}}"
+  with_items: "{{ rsnapshot_packages }}"
   when: ansible_os_family == "RedHat"
-  tags: packages
   
 # EOF
 ...
