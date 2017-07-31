@@ -1,0 +1,11 @@
+---
+# vars for ansible-rsnapshot
+
+#rsnapshot_backup_points:
+#  - { dir: "/scratch/rcb/test/", host: "localhost/" }
+
+#rsnapshot_exclude:
+#  - { regex: ".git/" }
+
+# EOF
+...
