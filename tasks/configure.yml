@@ -1,5 +1,13 @@
 ---
 
+- name: Create direcotry {{ rsnapshot_snapshot_root }}
+  file: >
+    path="{{ rsnapshot_snapshot_root }}"
+    state="directory"
+    owner="{{ rsnapshot_snapshot_root_owner }}"
+    group="{{ rsnapshot_snapshot_root_group }}"
+    mode="{{ rsnapshot_snapshot_root_mode }}"
+
 - name: Create configuration {{ rsnapshot_config_file }}
   template: >
     src="rsnapshot.conf.j2"

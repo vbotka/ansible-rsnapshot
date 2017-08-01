@@ -1,6 +1,8 @@
 ---
 # vars for ansible-rsnapshot
 
+#rsnapshot_snapshot_root: "/export/backup/snapshots"
+
 #rsnapshot_backup_points:
 #  - { dir: "/scratch/rcb/test/", host: "localhost/" }
 

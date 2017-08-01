@@ -4,6 +4,9 @@
 rsnapshot_packages:
   - rsnapshot
 
+rsnapshot_snapshot_root_group: "root"
+rsnapshot_snapshot_root_mode: "0700"
+
 rsnapshot_config_file: "/usr/local/etc/rsnapshot.conf"
 rsnapshot_config_file_owner: "root"
 rsnapshot_config_file_group: "root"
