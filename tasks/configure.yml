@@ -1,6 +1,6 @@
 ---
 
-- name: Create direcotry {{ rsnapshot_snapshot_root }}
+- name: Create directory {{ rsnapshot_snapshot_root }}
   file: >
     path="{{ rsnapshot_snapshot_root }}"
     state="directory"
