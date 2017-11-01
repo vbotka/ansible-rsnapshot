@@ -1,6 +1,10 @@
 ---
 # default vars for vbotka.rsnapshot
 
+freebsd_install_method: "packages"
+#freebsd_install_method: "ports"
+#freebsd_use_packages: "no"
+
 rsnapshot_config_version: "1.2"
 rsnapshot_snapshot_root: "/export/backup/snapshots"
 rsnapshot_snapshot_root_owner: "root"

@@ -1,12 +1,8 @@
 ---
 # FreeBSD vars for vbotka.rsnapshot
 
-#freebsd_install_method: "packages"
-freebsd_install_method: "ports"
-freebsd_use_packages: "no"
-
 rsnapshot_packages:
-  - rsnapshot
+  - sysutils/rsnapshot
 
 rsnapshot_snapshot_root_group: "wheel"
 rsnapshot_snapshot_root_mode: "0700"

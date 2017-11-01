@@ -1,8 +1,10 @@
 ---
 
-- name: Add {{ansible_os_family}} specific variables
-  include_vars: "{{ansible_os_family}}.yml"
+- name: Add {{ ansible_os_family }} specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
   tags:
+    - bsd_packages
+    - bsd_ports
     - rsnapshot_variables
     - rsnapshot_all
 
