@@ -1,5 +1,5 @@
 ---
-# vars for ansible-rsnapshot
+# vars for vbotka.rsnapshot
 
 #rsnapshot_snapshot_root: "/export/backup/snapshots"
 

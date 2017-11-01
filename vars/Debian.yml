@@ -1,5 +1,5 @@
 ---
-# Debian vars for ansible-rsnapshot
+# Debian vars for vbotka.rsnapshot
 
 rsnapshot_packages:
   - rsnapshot

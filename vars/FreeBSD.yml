@@ -1,5 +1,5 @@
 ---
-# FreeBSD vars for ansible-rsnapshot
+# FreeBSD vars for vbotka.rsnapshot
 
 #freebsd_install_method: "packages"
 freebsd_install_method: "ports"

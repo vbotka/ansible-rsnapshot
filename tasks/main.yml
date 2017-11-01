@@ -8,6 +8,8 @@
 
 - include: packages.yml
   tags:
+    - bsd_packages
+    - bsd_ports
     - rsnapshot_packages
     - rsnapshot_all
 
