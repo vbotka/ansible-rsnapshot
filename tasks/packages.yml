@@ -1,6 +1,7 @@
 ---
 
-#- debug: msg="{{ ansible_os_family }}"
+- debug: msg="ansible_os_family = {{ ansible_os_family }}"
+  when: rsnapshot_debug|lower == "yes"
 
 # FreeBSD
 - name: Install packages FreeBSD
@@ -8,7 +9,9 @@
     name="{{ item }}"
     state="present"
   with_items: "{{ rsnapshot_packages }}"
-  when: (ansible_os_family == "FreeBSD") and (freebsd_install_method == "packages")
+  when:
+    - ansible_os_family == "FreeBSD"
+    - freebsd_install_method == "packages"
 
 - name: Install ports FreeBSD
   portinstall: >
@@ -16,7 +19,9 @@
     state="present"
     use_packages="{{ freebsd_use_packages }}"
   with_items: "{{ rsnapshot_packages }}"
-  when: (ansible_os_family == "FreeBSD") and (freebsd_install_method == "ports")
+  when:
+    - ansible_os_family == "FreeBSD"
+    - freebsd_install_method == "ports"
 
 # Debian
 - name: Install packages Debian
