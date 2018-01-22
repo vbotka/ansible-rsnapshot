@@ -6,9 +6,11 @@ freebsd_install_method: "packages"
 #freebsd_use_packages: "no"
 
 rsnapshot_debug: "no"
+rsnapshot_test: "no"
 
 rsnapshot_config_version: "1.2"
 rsnapshot_snapshot_root: "/export/backup/snapshots"
+rsnapshot_snapshot_root_test: "/export/backup/snapshots-test"
 rsnapshot_snapshot_root_owner: "root"
 rsnapshot_no_create_root: "1"
 
@@ -41,6 +43,7 @@ rsnapshot_link_dest: "1"
 
 ### BACKUP POINTS / SCRIPTS ###
 rsnapshot_backup_points: []
+rsnapshot_backup_points_test: []
 #  - { dir: "/scratch/test/", host: "localhost/" }
 #rsnapshot_backup_scripts: []
 #
