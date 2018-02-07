@@ -1,5 +1,5 @@
 ---
-# default vars for vbotka.rsnapshot
+# defaults for vbotka.rsnapshot
 
 freebsd_install_method: "packages"
 #freebsd_install_method: "ports"
@@ -42,9 +42,10 @@ rsnapshot_link_dest: "1"
 #rsync_numtries 0
 
 ### BACKUP POINTS / SCRIPTS ###
-rsnapshot_backup_points: []
-rsnapshot_backup_points_test: []
-#  - { dir: "/scratch/test/", host: "localhost/" }
+rsnapshot_backup_points:
+  - { dir: "/scratch/test/", host: "localhost/" }
+rsnapshot_backup_points_test:
+  - { dir: "/scratch/test/", host: "localhost/" }
 #rsnapshot_backup_scripts: []
 #
 rsnapshot_exclude: []
