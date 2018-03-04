@@ -8,14 +8,14 @@
     - rsnapshot_variables
     - rsnapshot_all
 
-- include: packages.yml
+- import_tasks: packages.yml
   tags:
     - bsd_packages
     - bsd_ports
     - rsnapshot_packages
     - rsnapshot_all
 
-- include: configure.yml
+- import_tasks:: configure.yml
   tags:
     - rsnapshot_configure
     - rsnapshot_all
