@@ -4,7 +4,7 @@ rsnapshot
 [![Build Status](https://travis-ci.org/vbotka/ansible-rsnapshot.svg?branch=master)](https://travis-ci.org/vbotka/ansible-rsnapshot)
 
 [Ansible role](https://galaxy.ansible.com/vbotka/rsnapshot/).
-Install and configure rsnapshot. Tested with Ubuntu 17.10, FreeBSD 10.3 and 11.1
+Install and configure rsnapshot. Tested with Ubuntu 18.04. FreeBSD 10.3 and 11.1
 
 
 Requirements.
@@ -16,7 +16,7 @@ None.
 Role Variables.
 --------------
 
-TBD (Check defaults).
+Read the defaults and examples in vars.
 
 
 Dependencies.

@@ -42,10 +42,8 @@ rsnapshot_link_dest: "1"
 #rsync_numtries 0
 
 ### BACKUP POINTS / SCRIPTS ###
-rsnapshot_backup_points:
-  - { dir: "/scratch/test/", host: "localhost/" }
-rsnapshot_backup_points_test:
-  - { dir: "/scratch/test/", host: "localhost/" }
+rsnapshot_backup_points: {}
+rsnapshot_backup_points_test: {}
 #rsnapshot_backup_scripts: []
 #
 rsnapshot_exclude: []
