@@ -6,19 +6,16 @@ galaxy_info:
   license: BSD
   min_ansible_version: 2.4
   platforms:
-    - name: FreeBSD
-      versions:
-        - 10.3
-        - 11.0
     - name: Ubuntu
       versions:
         - bionic
         - xenial
         - zesty
         - artful
-    - name: Debian
-    - name: Fedora
-    - name: EL
+    - name: FreeBSD
+      versions:
+        - 10.3
+        - 11.1
   galaxy_tags:
     - backup
 dependencies: []
