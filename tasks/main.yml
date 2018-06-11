@@ -2,23 +2,13 @@
 
 - name: Add {{ ansible_os_family }} specific variables
   include_vars: "{{ ansible_os_family }}.yml"
-  tags:
-    - bsd_packages
-    - bsd_ports
-    - rsnapshot_variables
-    - rsnapshot_all
+  tags: rsnapshot_vars
 
 - import_tasks: packages.yml
-  tags:
-    - bsd_packages
-    - bsd_ports
-    - rsnapshot_packages
-    - rsnapshot_all
+  tags: rsnapshot_packages
 
 - import_tasks: configure.yml
-  tags:
-    - rsnapshot_configure
-    - rsnapshot_all
+  tags: rsnapshot_config
 
 # EOF
 ...

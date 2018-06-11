@@ -5,8 +5,8 @@ freebsd_install_method: "packages"
 #freebsd_install_method: "ports"
 #freebsd_use_packages: "no"
 
-rsnapshot_debug: "no"
-rsnapshot_test: "no"
+rsnapshot_debug: False
+rsnapshot_test: False
 
 rsnapshot_config_version: "1.2"
 rsnapshot_snapshot_root: "/export/backup/snapshots"
