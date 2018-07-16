@@ -1,23 +1,23 @@
 ---
 
-- debug: msg="ansible_os_family = {{ ansible_os_family }}"
+- debug:
+    msg: "ansible_os_family [ {{ ansible_os_family }} ]"
   when: rsnapshot_debug
 
 # FreeBSD
 - name: "packages: Install packages FreeBSD"
   pkgng:
     name: "{{ item }}"
-  with_items: "{{ rsnapshot_packages }}"
+  loop: "{{ rsnapshot_packages }}"
   when:
     - ansible_os_family == "FreeBSD"
     - freebsd_install_method == "packages"
 
 - name: "packages: Install ports FreeBSD"
-  portinstall: >
-    name="{{ item }}"
-    state="present"
-    use_packages="{{ freebsd_use_packages }}"
-  with_items: "{{ rsnapshot_packages }}"
+  portinstall:
+    name: "{{ item }}"
+    use_packages: "{{ freebsd_use_packages }}"
+  loop: "{{ rsnapshot_packages }}"
   when:
     - ansible_os_family == "FreeBSD"
     - freebsd_install_method == "ports"
@@ -26,7 +26,7 @@
 - name: "packages: Install packages Linux"
   package:
     name: "{{ item }}"
-  with_items: "{{ rsnapshot_packages }}"
+  loop: "{{ rsnapshot_packages }}"
   when: (ansible_os_family == "Debian") or
         (ansible_os_family == "RedHat")
   

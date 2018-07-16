@@ -2,8 +2,8 @@
 
 - name: "configure: Create directory {{ rsnapshot_snapshot_root }}"
   file:
+    state: directory
     path: "{{ rsnapshot_snapshot_root }}"
-    state: "directory"
     owner: "{{ rsnapshot_snapshot_root_owner }}"
     group: "{{ rsnapshot_snapshot_root_group }}"
     mode: "{{ rsnapshot_snapshot_root_mode }}"
@@ -15,13 +15,13 @@
     owner: "{{ rsnapshot_config_file_owner }}"
     group: "{{ rsnapshot_config_file_group }}"
     mode: "{{ rsnapshot_config_file_mode }}"
-    backup: yes
+    backup: "{{ rsnapshot_backup_conf }}"
     validate: "rsnapshot -c %s configtest"
 
 - name: "configure: Create test directory {{ rsnapshot_snapshot_root_test }}"
   file:
+    state: directory
     path: "{{ rsnapshot_snapshot_root_test }}"
-    state: "directory"
     owner: "{{ rsnapshot_snapshot_root_owner }}"
     group: "{{ rsnapshot_snapshot_root_group }}"
     mode: "{{ rsnapshot_snapshot_root_mode }}"
@@ -29,12 +29,12 @@
 
 - name: "configure: Create test backup_points"
   file:
+    state: directory
     path: "{{ item.dir }}"
-    state: "directory"
     owner: "{{ rsnapshot_snapshot_root_owner }}"
     group: "{{ rsnapshot_snapshot_root_group }}"
     mode: "{{ rsnapshot_snapshot_root_mode }}"
-  with_items: "{{ rsnapshot_backup_points_test }}"
+  loop: "{{ rsnapshot_backup_points_test }}"
   when: rsnapshot_test
 
 - name: "configure: Create test configuration {{ rsnapshot_config_file_test }}"
@@ -44,7 +44,7 @@
     owner: "{{ rsnapshot_config_file_owner }}"
     group: "{{ rsnapshot_config_file_group }}"
     mode: "{{ rsnapshot_config_file_mode }}"
-    backup: yes
+    backup: "{{ rsnapshot_backup_conf }}"
     validate: "rsnapshot -c %s configtest"
   when: rsnapshot_test
 

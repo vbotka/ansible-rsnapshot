@@ -1,6 +1,6 @@
 ---
 
-- name: Add {{ ansible_os_family }} specific variables
+- name: "Add {{ ansible_os_family }} specific variables"
   include_vars: "{{ ansible_os_family }}.yml"
   tags: rsnapshot_vars
 

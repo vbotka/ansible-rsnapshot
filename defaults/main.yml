@@ -7,6 +7,7 @@ freebsd_install_method: "packages"
 
 rsnapshot_debug: False
 rsnapshot_test: False
+rsnapshot_backup_conf: no
 
 rsnapshot_config_version: "1.2"
 rsnapshot_snapshot_root: "/export/backup/snapshots"
@@ -42,8 +43,8 @@ rsnapshot_link_dest: "1"
 #rsync_numtries 0
 
 ### BACKUP POINTS / SCRIPTS ###
-rsnapshot_backup_points: {}
-rsnapshot_backup_points_test: {}
+rsnapshot_backup_points: []
+rsnapshot_backup_points_test: []
 #rsnapshot_backup_scripts: []
 #
 rsnapshot_exclude: []
