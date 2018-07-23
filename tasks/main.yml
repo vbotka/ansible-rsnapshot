@@ -2,13 +2,17 @@
 
 - name: "Add {{ ansible_os_family }} specific variables"
   include_vars: "{{ ansible_os_family }}.yml"
-  tags: rsnapshot_vars
+  tags: [rsnapshot_vars, always]
 
 - import_tasks: packages.yml
   tags: rsnapshot_packages
 
 - import_tasks: configure.yml
   tags: rsnapshot_config
+
+- import_tasks: test.yml
+  when: rsnapshot_test
+  tags: rsnapshot_test
 
 # EOF
 ...

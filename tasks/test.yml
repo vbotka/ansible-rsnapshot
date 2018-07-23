@@ -1,0 +1,31 @@
+---
+
+- name: "configure: Create test directory {{ rsnapshot_snapshot_root_test }}"
+  file:
+    state: directory
+    path: "{{ rsnapshot_snapshot_root_test }}"
+    owner: "{{ rsnapshot_snapshot_root_owner }}"
+    group: "{{ rsnapshot_snapshot_root_group }}"
+    mode: "{{ rsnapshot_snapshot_root_mode }}"
+
+- name: "configure: Create test backup_points"
+  file:
+    state: directory
+    path: "{{ item.dir }}"
+    owner: "{{ rsnapshot_snapshot_root_owner }}"
+    group: "{{ rsnapshot_snapshot_root_group }}"
+    mode: "{{ rsnapshot_snapshot_root_mode }}"
+  loop: "{{ rsnapshot_backup_points_test }}"
+
+- name: "configure: Create test configuration {{ rsnapshot_config_file_test }}"
+  template:
+    src: "rsnapshot-test.conf.j2"
+    dest: "{{ rsnapshot_config_file_test }}"
+    owner: "{{ rsnapshot_config_file_owner }}"
+    group: "{{ rsnapshot_config_file_group }}"
+    mode: "{{ rsnapshot_config_file_mode }}"
+    backup: "{{ rsnapshot_backup_conf }}"
+    validate: "rsnapshot -c %s configtest"
+
+# EOF
+...
