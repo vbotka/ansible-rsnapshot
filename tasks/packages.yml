@@ -29,6 +29,6 @@
   loop: "{{ rsnapshot_packages }}"
   when: (ansible_os_family == "Debian") or
         (ansible_os_family == "RedHat")
-  
+
 # EOF
 ...

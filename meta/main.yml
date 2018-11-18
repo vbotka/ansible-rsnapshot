@@ -4,7 +4,7 @@ galaxy_info:
   company: https://botka.link
   github_branch: master
   license: BSD
-  min_ansible_version: 2.5
+  min_ansible_version: 2.7
   platforms:
     - name: Ubuntu
       versions:
@@ -14,7 +14,6 @@ galaxy_info:
         - 7
     - name: FreeBSD
       versions:
-        - 10.4
         - 11.2
   galaxy_tags:
     - rsnapshot
