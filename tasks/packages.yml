@@ -9,6 +9,10 @@
   pkgng:
     name: "{{ item }}"
   loop: "{{ rsnapshot_packages }}"
+  register: result
+  retries: "{{ freebsd_install_retries }}"
+  until: result is succeeded
+  delay: "{{ freebsd_install_delay }}"
   when:
     - ansible_os_family == "FreeBSD"
     - freebsd_install_method == "packages"
@@ -18,6 +22,10 @@
     name: "{{ item }}"
     use_packages: "{{ freebsd_use_packages }}"
   loop: "{{ rsnapshot_packages }}"
+  register: result
+  retries: "{{ freebsd_install_retries }}"
+  until: result is succeeded
+  delay: "{{ freebsd_install_delay }}"
   when:
     - ansible_os_family == "FreeBSD"
     - freebsd_install_method == "ports"
@@ -27,6 +35,10 @@
   package:
     name: "{{ item }}"
   loop: "{{ rsnapshot_packages }}"
+  register: result
+  retries: "{{ linux_install_retries }}"
+  until: result is succeeded
+  delay: "{{ linux_install_delay }}"
   when: (ansible_os_family == "Debian") or
         (ansible_os_family == "RedHat")
 
