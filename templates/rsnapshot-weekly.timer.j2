@@ -1,0 +1,10 @@
+[Unit]
+Description=rsnapshot{{ rsnapshot_systemd_postfix  }} weekly backup
+
+[Timer]
+# Run once per week on Monday at 4:30, after daily runs
+OnCalendar=Monday  *-*-* 04:30:00
+Unit=rsnapshot{{ rsnapshot_systemd_postfix  }}@weekly.service
+
+[Install]
+WantedBy=timers.target

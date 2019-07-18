@@ -1,0 +1,10 @@
+[Unit]
+Description=rsnapshot{{ rsnapshot_systemd_postfix  }} hourly backup
+
+[Timer]
+# Run hourly
+OnCalendar=*-*-* *:00:00
+Unit=rsnapshot{{ rsnapshot_systemd_postfix  }}@hourly.service
+
+[Install]
+WantedBy=timers.target

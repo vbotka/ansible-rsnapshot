@@ -1,0 +1,10 @@
+[Unit]
+Description=rsnapshot{{ rsnapshot_systemd_postfix  }} daily backup
+
+[Timer]
+# 05:30 is the clock time when to start it
+OnCalendar=05:30
+Unit=rsnapshot{{ rsnapshot_systemd_postfix  }}@daily.service
+
+[Install]
+WantedBy=timers.target

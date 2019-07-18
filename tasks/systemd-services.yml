@@ -1,0 +1,50 @@
+---
+
+- name: Install rsnapshot service
+  template:
+    src: "rsnapshot@.service.j2"
+    dest: "/etc/systemd/system/rsnapshot{{ rsnapshot_systemd_postfix  }}@.service"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Install rsnapshot timers
+  template:
+    src: "rsnapshot-{{item}}.timer.j2"
+    dest: "/etc/systemd/system/rsnapshot{{ rsnapshot_systemd_postfix  }}-{{ item }}.timer"
+    owner: root
+    group: root
+    mode: '0644'
+  when: "rsnapshot_retain_{{item}} != -1"
+  loop:
+     - monthly
+     - weekly
+     - daily
+     - hourly
+
+- name: Enable snapshot timers
+  systemd:
+    name: "rsnapshot{{ rsnapshot_systemd_postfix  }}-{{ item }}.timer"
+    daemon_reload: yes
+    enabled: yes
+    masked: no
+    state: restarted
+  when: "rsnapshot_retain_{{item}} != -1"
+  loop:
+     - monthly
+     - weekly
+     - daily
+     - hourly
+
+- name: Get systemd-timers
+  command: systemctl list-timers
+  register: out
+  tags: verify_systemd_timers
+
+- name: Verify timers are enabled as expected
+  debug: var=out.stdout_lines
+  tags: verify_systemd_timers
+
+
+# EOF
+...

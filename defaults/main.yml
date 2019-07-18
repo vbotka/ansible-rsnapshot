@@ -56,5 +56,11 @@ rsnapshot_backup_points_test: []
 rsnapshot_exclude: []
 #  - { regex: ".git/" }
 
+# systemd options
+enable_systemd_timers: yes
+rsnapshot_systemd_postfix: ""
+rsnapshot_systemd_preexec: -1
+rsnapshot_systemd_postexec: -1
+rsnapshot_systemd_onfailure: -1
 # EOF
 ...

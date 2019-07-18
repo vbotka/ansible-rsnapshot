@@ -14,5 +14,9 @@
   when: rsnapshot_test
   tags: rsnapshot_test
 
+- import_tasks: systemd-services.yml
+  when: enable_systemd_timers
+  tags: systemd_timers
+
 # EOF
 ...
