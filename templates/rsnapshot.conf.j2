@@ -35,7 +35,9 @@ retain		monthly	{{ rsnapshot_retain_monthly }}
 # GLOBAL OPTIONS
 verbose		{{ rsnapshot_verbose }}
 loglevel	{{ rsnapshot_loglevel }}
+{% if rsnapshot_enable_log %}
 logfile		{{ rsnapshot_logfile }}
+{% endif %}
 lockfile	{{ rsnapshot_lockfile }}
 #rsync_short_args	-a
 #rsync_long_args	--delete --numeric-ids --relative --delete-excluded
