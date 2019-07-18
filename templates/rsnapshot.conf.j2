@@ -62,7 +62,7 @@ link_dest	{{ rsnapshot_link_dest }}
 
 ### BACKUP POINTS/SCRIPTS
 {% for item  in rsnapshot_backup_points %}
-backup	{{ item.dir }}	{{ item.host }}
+backup	{{ item.dir }}	{{ item.host }}	{{ item.options | default('') }}
 {% endfor %}
 
 ### EXCLUDE 
