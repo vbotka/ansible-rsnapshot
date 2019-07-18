@@ -10,6 +10,33 @@ Requirements.
 
 None.
 
+Example:
+------------
+```
+tasks:
+  - include_role:
+       name: ansible-rsnapshot
+     vars:
+       - rsnapshot_systemd_postfix: "_projectX"
+       - rsnapshot_config_file: /etc/rsnapshot_projectX.conf
+       - rsnapshot_lockfile: "/var/run/rsnapshot_projectX.pid"
+       - rsnapshot_snapshot_root: "/mnt/bkup_dst/"
+       - rsnapshot_backup_points:
+         - dir: '/mnt/ProjectX_src/'
+           host: 'HostA'
+           options: '+rsync_long_args=--no-relative'
+       - rsnapshot_retain_monthly: 6
+       - rsnapshot_retain_weekly: 4
+       - rsnapshot_retain_daily: 7
+       - rsnapshot_retain_hourly: -1
+       - rsnapshot_link_dest: 0
+       - rsnapshot_systemd_preexec: "/usr/local/sbin/preScript.sh"
+       - rsnapshot_systemd_postexec: "/usr/local/sbin/PostScript.sh"
+       - rsnapshot_systemd_onfailure: "/usr/local/sbin/failureScript.sh"
+       - rsnapshot_verbose: "3"
+```
+
+
 Role Variables.
 --------------
 
