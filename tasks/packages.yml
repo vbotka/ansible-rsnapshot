@@ -1,9 +1,5 @@
 ---
 
-- debug:
-    msg: "ansible_os_family [ {{ ansible_os_family }} ]"
-  when: rsnapshot_debug
-
 # FreeBSD
 - name: "packages: Install packages FreeBSD"
   pkgng:

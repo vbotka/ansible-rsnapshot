@@ -1,6 +1,11 @@
 ---
 
-- name: "Add {{ ansible_os_family }} specific variables"
+- name: "Debug"
+  debug:
+    msg: "ansible_os_family [{{ ansible_os_family }}]"
+  when: rsnapshot_debug
+
+- name: "Include variables from vars/{{ ansible_os_family }}"
   include_vars: "{{ ansible_os_family }}.yml"
   tags: [rsnapshot_vars, always]
 
