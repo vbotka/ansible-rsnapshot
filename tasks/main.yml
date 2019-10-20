@@ -10,6 +10,7 @@
   tags: [rsnapshot_vars, always]
 
 - import_tasks: packages.yml
+  when: rsnapshot_install|bool
   tags: rsnapshot_packages
 
 - import_tasks: configure.yml

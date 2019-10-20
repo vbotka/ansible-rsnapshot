@@ -2,7 +2,7 @@
 
 - name: "configure: Create directory {{ rsnapshot_snapshot_root }}"
   file:
-    state: directory
+    state: "directory"
     path: "{{ rsnapshot_snapshot_root }}"
     owner: "{{ rsnapshot_snapshot_root_owner }}"
     group: "{{ rsnapshot_snapshot_root_group }}"
