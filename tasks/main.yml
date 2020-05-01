@@ -1,13 +1,11 @@
 ---
 
-- name: "Debug"
-  debug:
-    msg: "ansible_os_family [{{ ansible_os_family }}]"
-  when: rsnapshot_debug
-
-- name: "Include variables from vars/{{ ansible_os_family }}"
-  include_vars: "{{ ansible_os_family }}.yml"
+- import_tasks: vars.yml
   tags: [rsnapshot_vars, always]
+
+- import_tasks: debug.yml
+  when: rsnapshot_debug|bool
+  tags: [rsnapshot_debug, always]
 
 - import_tasks: packages.yml
   when: rsnapshot_install|bool

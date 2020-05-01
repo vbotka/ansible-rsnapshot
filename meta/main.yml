@@ -17,6 +17,8 @@ galaxy_info:
         - 11.3
         - 12.1
   galaxy_tags:
+    - freebsd
+    - linux
     - rsnapshot
 dependencies: []
 ...
