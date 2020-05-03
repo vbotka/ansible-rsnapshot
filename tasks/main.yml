@@ -15,7 +15,7 @@
   tags: rsnapshot_config
 
 - import_tasks: test.yml
-  when: rsnapshot_test
+  when: rsnapshot_test|bool
   tags: rsnapshot_test
 
 # EOF
