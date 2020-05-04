@@ -1,5 +1,5 @@
 ---
-# RedHat vars for vbotka.rsnapshot
+# RedHat vars for rsnapshot
 
 rsnapshot_packages:
   - rsnapshot

@@ -1,5 +1,5 @@
 ---
-# vars for vbotka.rsnapshot
+# vars for rsnapshot
 
 # rsnapshot_snapshot_root: "/export/backup/snapshots"
 

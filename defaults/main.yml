@@ -1,5 +1,5 @@
 ---
-# defaults for vbotka.rsnapshot
+# defaults for rsnapshot
 
 rsnapshot_install: true
 
