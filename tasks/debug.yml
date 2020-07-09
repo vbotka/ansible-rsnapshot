@@ -29,7 +29,7 @@
 #      rsnapshot_
 #      {{ rsnapshot_|to_yaml }}
   debug:
-    msg: "{{ msg.split('\n') }}"
+    msg: "{{ msg.split('\n')[:-1] }}"
 
 # EOF
 ...
