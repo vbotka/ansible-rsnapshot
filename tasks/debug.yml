@@ -2,7 +2,7 @@
 
 - name: "Debug"
   vars:
-    msg: |
+    msg: |-
       ansible_os_family [{{ ansible_os_family }}]
       ansible_distribution [{{ ansible_distribution }}]
       ansible_distribution_major_version [{{ ansible_distribution_major_version }}]
@@ -29,7 +29,7 @@
 #      rsnapshot_
 #      {{ rsnapshot_|to_yaml }}
   debug:
-    msg: "{{ msg.split('\n')[:-1] }}"
+    msg: "{{ msg.split('\n') }}"
 
 # EOF
 ...

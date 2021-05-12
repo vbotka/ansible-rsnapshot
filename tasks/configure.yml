@@ -1,7 +1,7 @@
 ---
 
 - name: "configure: Create directory {{ rsnapshot_snapshot_root }}"
-  file:
+  ansible.builtin.file:
     state: directory
     path: "{{ rsnapshot_snapshot_root }}"
     owner: "{{ rsnapshot_snapshot_root_owner }}"
@@ -9,7 +9,7 @@
     mode: "{{ rsnapshot_snapshot_root_mode }}"
 
 - name: "configure: Create configuration {{ rsnapshot_config_file }}"
-  template:
+  ansible.builtin.template:
     src: rsnapshot.conf.j2
     dest: "{{ rsnapshot_config_file }}"
     owner: "{{ rsnapshot_config_file_owner }}"
