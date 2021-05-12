@@ -21,4 +21,6 @@ galaxy_info:
     - linux
     - rsnapshot
 dependencies: []
+collections:
+  - community.general
 ...
