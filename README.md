@@ -9,7 +9,11 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 [Contributions are welcome](https://github.com/firstcontributions/first-contributions).
 
 
-## Requirements
+## Requirements and dependencies
+
+### Roles
+
+* vbotka.ansible_lib
 
 ### Collections
 
@@ -18,18 +22,13 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 
 ## Role Variables
 
-Review the defaults and examples in vars.
+See the defaults and examples in vars.
 
 By default there are no backup points defined by variables **rsnapshot_backup_points** and **rsnapshot_backup_points_test**. At least one backup point must be defined. Otherwise rsnapshot will fail with the error:
 
 ```
 ERROR: At least one backup point must be set. rsnapshot can not continue.
 ```
-
-
-## Dependencies
-
-None.
 
 
 ## License

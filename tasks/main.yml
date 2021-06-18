@@ -1,20 +1,25 @@
 ---
 
-- import_tasks: vars.yml
+- name: Import vars.yml
+  ansible.builtin.import_tasks: vars.yml
   tags: [rsnapshot_vars, always]
 
-- import_tasks: debug.yml
+- name: Import debug.yml
+  ansible.builtin.import_tasks: debug.yml
   when: rsnapshot_debug|bool
   tags: [rsnapshot_debug, always]
 
-- import_tasks: packages.yml
+- name: Import packages.yml
+  ansible.builtin.import_tasks: packages.yml
   when: rsnapshot_install|bool
   tags: rsnapshot_packages
 
-- import_tasks: configure.yml
+- name: Import configure.yml
+  ansible.builtin.import_tasks: configure.yml
   tags: rsnapshot_config
 
-- import_tasks: test.yml
+- name: Import test.yml
+  ansible.builtin.import_tasks: test.yml
   when: rsnapshot_test|bool
   tags: rsnapshot_test
 

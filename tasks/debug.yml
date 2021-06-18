@@ -28,7 +28,7 @@
 #      rsnapshot_ [{{ rsnapshot_ }}]
 #      rsnapshot_
 #      {{ rsnapshot_|to_yaml }}
-  debug:
+  ansible.builtin.debug:
     msg: "{{ msg.split('\n') }}"
 
 # EOF

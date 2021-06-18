@@ -1,5 +1,5 @@
 ---
-# vars for rsnapshot
+# vars samples for rsnapshot
 
 # rsnapshot_snapshot_root: "/export/backup/snapshots"
 
