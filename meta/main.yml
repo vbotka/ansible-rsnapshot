@@ -9,14 +9,14 @@ galaxy_info:
   license: BSD
   min_ansible_version: "2.14"
   platforms:
-    - name: Ubuntu
-      versions:
-        - focal
-        - jammy
     - name: FreeBSD
       versions:
         - 12.4
         - 13.2
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
   galaxy_tags:
     - freebsd
     - linux
