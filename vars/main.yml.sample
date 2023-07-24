@@ -1,7 +1,7 @@
 ---
 # vars samples for rsnapshot
 
-# rsnapshot_snapshot_root: "/export/backup/snapshots"
+# rsnapshot_snapshot_root: /export/backup/snapshots
 
 # rsnapshot_backup_points:
 #  - {dir: /scratch/test/, host: localhost/}
@@ -12,8 +12,8 @@
 
 
 # rsnapshot_exclude:
-#  - regex: ".git/"
-#  - regex: ".#*"
+#  - regex: '.git/'
+#  - regex: '.#*'
 
 # EOF
 ...
