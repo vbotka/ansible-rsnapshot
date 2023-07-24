@@ -38,4 +38,4 @@ ERROR: At least one backup point must be set. rsnapshot can not continue.
 
 ## Author Information
 
-[Vladimir Botka](https://botka.link)
+[Vladimir Botka](https://botka.info)

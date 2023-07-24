@@ -25,7 +25,7 @@
     group: "{{ rsnapshot_config_file_group }}"
     mode: "{{ rsnapshot_config_file_mode }}"
     backup: "{{ rsnapshot_backup_conf }}"
-    validate: "rsnapshot -c %s configtest"
+    validate: 'rsnapshot -c %s configtest'
 
 # EOF
 ...
