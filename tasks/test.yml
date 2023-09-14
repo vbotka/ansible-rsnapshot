@@ -1,6 +1,6 @@
 ---
 
-- name: "configure: Create test directory {{ rsnapshot_snapshot_root_test }}"
+- name: "test: Create test directory {{ rsnapshot_snapshot_root_test }}"
   ansible.builtin.file:
     state: directory
     path: "{{ rsnapshot_snapshot_root_test }}"
@@ -8,7 +8,7 @@
     group: "{{ rsnapshot_snapshot_root_group }}"
     mode: "{{ rsnapshot_snapshot_root_mode }}"
 
-- name: "configure: Create test backup_points"
+- name: "test: Create test backup_points"
   ansible.builtin.file:
     state: directory
     path: "{{ item.dir }}"
@@ -17,7 +17,7 @@
     mode: "{{ rsnapshot_snapshot_root_mode }}"
   loop: "{{ rsnapshot_backup_points_test }}"
 
-- name: "configure: Create test configuration {{ rsnapshot_config_file_test }}"
+- name: "test: Create test configuration {{ rsnapshot_config_file_test }}"
   ansible.builtin.template:
     src: rsnapshot-test.conf.j2
     dest: "{{ rsnapshot_config_file_test }}"
