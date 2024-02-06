@@ -21,7 +21,7 @@
       linux_install_retries: {{ linux_install_retries }}
       linux_install_delay: {{ linux_install_delay }}
       rsnapshot_packages:
-        {{ rsnapshot_packages|to_nice_yaml(indent=2)|indent(2) }}
+        {{ rsnapshot_packages | to_nice_yaml(indent=2) | indent(2) }}
       rsnapshot_config_version: {{ rsnapshot_config_version }}
   ansible.builtin.debug:
     msg: "{{ '{}'.format(msg) }}"

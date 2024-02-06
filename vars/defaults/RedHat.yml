@@ -5,13 +5,13 @@ rsnapshot_packages:
   - rsnapshot
 
 rsnapshot_snapshot_root_group: root
-rsnapshot_snapshot_root_mode: '0700'
+rsnapshot_snapshot_root_mode: "0700"
 
 rsnapshot_config_file: /usr/local/etc/rsnapshot.conf
 rsnapshot_config_file_test: /usr/local/etc/rsnapshot-test.conf
 rsnapshot_config_file_owner: root
 rsnapshot_config_file_group: root
-rsnapshot_config_file_mode: '0640'
+rsnapshot_config_file_mode: "0640"
 
 rsnapshot_cmd_cp: /bin/cp
 rsnapshot_cmd_rm: /bin/rm
