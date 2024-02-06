@@ -24,10 +24,23 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 
 See the defaults and examples in vars.
 
-By default there are no backup points defined by variables **rsnapshot_backup_points** and **rsnapshot_backup_points_test**. At least one backup point must be defined. Otherwise rsnapshot will fail with the error:
+By default there are no backup points defined by variables
+**rsnapshot_backup_points** and **rsnapshot_backup_points_test**. At
+least one backup point must be defined. Otherwise rsnapshot will fail
+with the error:
 
 ```
 ERROR: At least one backup point must be set. rsnapshot can not continue.
+```
+
+## Ansible lint
+
+Use the configuration file *.ansible-lint.local* when running
+*ansible-lint*. Some rules might be disabled and some warnings might
+be ignored. See the notes in the configuration file.
+
+```bash
+shell> ansible-lint -c .ansible-lint.local
 ```
 
 

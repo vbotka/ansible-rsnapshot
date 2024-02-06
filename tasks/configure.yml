@@ -1,6 +1,6 @@
 ---
 
-- name: "configure: Create directory {{ rsnapshot_snapshot_root }}"
+- name: "Configure: Create directory {{ rsnapshot_snapshot_root }}"
   ansible.builtin.file:
     state: directory
     path: "{{ rsnapshot_snapshot_root }}"
@@ -8,7 +8,7 @@
     group: "{{ rsnapshot_snapshot_root_group }}"
     mode: "{{ rsnapshot_snapshot_root_mode }}"
 
-- name: "configure: Create configuration {{ rsnapshot_config_file }}"
+- name: "Configure: Create configuration {{ rsnapshot_config_file }}"
   ansible.builtin.template:
     src: rsnapshot.conf.j2
     dest: "{{ rsnapshot_config_file }}"
@@ -16,7 +16,7 @@
     group: "{{ rsnapshot_config_file_group }}"
     mode: "{{ rsnapshot_config_file_mode }}"
     backup: "{{ rsnapshot_backup_conf }}"
-    validate: "rsnapshot -c %s configtest"
+    validate: rsnapshot -c %s configtest
 
 # EOF
 ...

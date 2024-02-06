@@ -54,7 +54,6 @@ rsnapshot_backup_points_test: []
 # rnapshot_backup_scripts: []
 #
 rsnapshot_exclude: []
-#  - { regex: ".git/" }
 
 # EOF
 ...

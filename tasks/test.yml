@@ -1,17 +1,16 @@
 ---
-
-- name: "test: DEBUG Print variables"
+- name: "Test: DEBUG Print variables"
   vars:
     msg: |
-         Enable test ............ rsnapshot_test ................ {{ rsnapshot_test }}
-         Rsnapshot config test .. rsnapshot_config_file_test .... {{ rsnapshot_config_file_test }}
-         Backup dir test ........ rsnapshot_snapshot_root_test .. {{ rsnapshot_snapshot_root_test }}
-         Backup points test ..... rsnapshot_backup_points_test .. {{ rsnapshot_backup_points_test }}
+      Enable test ............ rsnapshot_test ................ {{ rsnapshot_test }}
+      Rsnapshot config test .. rsnapshot_config_file_test .... {{ rsnapshot_config_file_test }}
+      Backup dir test ........ rsnapshot_snapshot_root_test .. {{ rsnapshot_snapshot_root_test }}
+      Backup points test ..... rsnapshot_backup_points_test .. {{ rsnapshot_backup_points_test }}
   ansible.builtin.debug:
     msg: "{{ '{}'.format(msg) }}"
-  when: rsnapshot_debug|bool
+  when: rsnapshot_debug | bool
 
-- name: "test: Create test directory {{ rsnapshot_snapshot_root_test }}"
+- name: "Test: Create test directory {{ rsnapshot_snapshot_root_test }}"
   ansible.builtin.file:
     state: directory
     path: "{{ rsnapshot_snapshot_root_test }}"
@@ -19,7 +18,7 @@
     group: "{{ rsnapshot_snapshot_root_group }}"
     mode: "{{ rsnapshot_snapshot_root_mode }}"
 
-- name: "test: Create test backup_points"
+- name: "Test: Create test backup_points"
   ansible.builtin.file:
     state: directory
     path: "{{ item.dir }}"
@@ -28,7 +27,7 @@
     mode: "{{ rsnapshot_snapshot_root_mode }}"
   loop: "{{ rsnapshot_backup_points_test }}"
 
-- name: "test: Create test configuration {{ rsnapshot_config_file_test }}"
+- name: "Test: Create test configuration {{ rsnapshot_config_file_test }}"
   ansible.builtin.template:
     src: rsnapshot-test.conf.j2
     dest: "{{ rsnapshot_config_file_test }}"
@@ -36,7 +35,7 @@
     group: "{{ rsnapshot_config_file_group }}"
     mode: "{{ rsnapshot_config_file_mode }}"
     backup: "{{ rsnapshot_backup_conf }}"
-    validate: 'rsnapshot -c %s configtest'
+    validate: rsnapshot -c %s configtest
 
 # EOF
 ...
