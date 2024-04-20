@@ -1,6 +1,6 @@
 # rsnapshot
 
-[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/rsnapshot)[![Build Status](https://travis-ci.org/vbotka/ansible-rsnapshot.svg?branch=master)](https://travis-ci.org/vbotka/ansible-rsnapshot)
+[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/rsnapshot)[![Build Status](https://travis-ci.org/vbotka/ansible-rsnapshot.svg?branch=master)](https://travis-ci.org/vbotka/ansible-rsnapshot)[![GitHub tag](https://img.shields.io/github/v/tag/vbotka/ansible-rsnapshot)](https://github.com/vbotka/ansible-rsnapshot/tags)
 
 [Ansible role.](https://galaxy.ansible.com/vbotka/rsnapshot/) Install and configure [rsnapshot](http://rsnapshot.org/).
 
