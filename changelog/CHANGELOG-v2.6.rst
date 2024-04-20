@@ -14,6 +14,7 @@ Bugfix update.
 
 Major Changes
 -------------
+* Supported FreeBSD 13.3 and 14.0
 
 Minor Changes
 -------------
