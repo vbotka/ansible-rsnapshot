@@ -1,7 +1,8 @@
 ---
-# defaults for rsnapshot
+# defaults for vbotka.rsnapshot
 
 rsnapshot_install: true
+rsnapshot_supported_linux_family: [Debian, RedHat]
 
 freebsd_install_method: packages
 # freebsd_install_method: ports

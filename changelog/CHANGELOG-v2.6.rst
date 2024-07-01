@@ -21,6 +21,8 @@ Minor Changes
 * Fix README tag badge.
 * Use default rules in local ansible-lint config.
 * Update skip_list in local ansible-lint config.
+* Add variable rsnapshot_supported_linux_family
+  default=[Debian, RedHat]
 
 
 2.6.0
