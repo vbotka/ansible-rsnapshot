@@ -10,11 +10,11 @@ vbotka.rsnapshot 2.6 Release Notes
 
 Release Summary
 ---------------
-Bugfix update.
+Ansible 2.17 bugfix update.
 
 Major Changes
 -------------
-* Supported FreeBSD 13.3 and 14.0
+* Supported FreeBSD 13.3, 14.0, and 14.1
 
 Minor Changes
 -------------
