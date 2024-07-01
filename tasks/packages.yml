@@ -34,7 +34,7 @@
   retries: "{{ linux_install_retries }}"
   until: result is succeeded
   delay: "{{ linux_install_delay }}"
-  when: ansible_os_family in ['Debian', 'RedHat']
+  when: ansible_os_family in rsnapshot_supported_linux_family
 
 # EOF
 ...
