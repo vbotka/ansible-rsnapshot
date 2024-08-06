@@ -35,6 +35,48 @@ with the error:
 ERROR: At least one backup point must be set. rsnapshot can not continue.
 ```
 
+## Workflow
+
+Install role
+
+```sh
+shell> ansible-galaxy install vbotka.rsnapshot
+```
+
+Create playbook and inventory
+
+```sh
+shell> cat rsnapshot.yml
+- hosts: webserver
+  roles:
+    - vbotka.rsnapshot
+```
+
+Test syntax
+
+```sh
+shell> ansible-playbook rsnapshot.yml --syntax-check
+```
+
+Install packages
+
+```sh
+shell> ansible-playbook rsnapshot.yml -t rsnapshot_pkg -e rsnapshot_install=true
+```
+
+Dry-run the play and display changes
+
+```sh
+ansible-playbook rsnapshot.yml --check --diff
+```
+
+Run the play
+
+```sh
+ansible-playbook rsnapshot.yml
+```
+
+
 ## Ansible lint
 
 Use the configuration file *.ansible-lint.local* when running
