@@ -16,10 +16,11 @@ Major Changes
 -------------
 * Add supported Ubuntu Noble.
 * Add var rsnapshot_role_version
-* Update debug.yml
+* Update debug.yml, pkg.yml, test.yml
 
 Minor Changes
 -------------
+* Update README
 
 
 2.6.1
