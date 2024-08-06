@@ -20,6 +20,7 @@ galaxy_info:
         - jammy
         - lunar
         - mantic
+        - noble
   galaxy_tags:
     - freebsd
     - linux
@@ -27,4 +28,3 @@ galaxy_info:
 dependencies: []
 collections:
   - community.general
-...

@@ -5,6 +5,23 @@ vbotka.rsnapshot 2.6 Release Notes
 .. contents:: Topics
 
 
+2.6.2
+=====
+
+Release Summary
+---------------
+Maintenance update.
+
+Major Changes
+-------------
+* Add supported Ubuntu Noble.
+* Add var rsnapshot_role_version
+* Update debug.yml
+
+Minor Changes
+-------------
+
+
 2.6.1
 =====
 
