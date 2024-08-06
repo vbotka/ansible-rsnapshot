@@ -1,5 +1,6 @@
 ---
-- name: "Test: DEBUG Print variables"
+
+- name: "Test: DEBUG Print variables rsnapshot_debug={{ rsnapshot_debug }}"
   vars:
     msg: |
       Enable test ............ rsnapshot_test ................ {{ rsnapshot_test }}
