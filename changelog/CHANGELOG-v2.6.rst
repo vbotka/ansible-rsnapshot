@@ -3,25 +3,21 @@ vbotka.rsnapshot 2.6 Release Notes
 ==================================
 
 .. contents:: Topics
-# BEGIN Commits 2.6.3
-- '"Update"'
-# END Commits 2.6.3
-# BEGIN Release notes 2.6.3
+
+
 2.6.3
 =====
+
 Release Summary
 ---------------
+Maintenance update.
+
 Major Changes
 -------------
+
 Minor Changes
 -------------
-- '"Update"'
-
-Bugfixes
---------
-Breaking Changes / Porting Guide
---------------------------------
-# END Release notes 2.6.3
+- Update python 3.11 in .travis.yml
 
 
 2.6.2
