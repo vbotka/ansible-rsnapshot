@@ -35,6 +35,7 @@ rsnapshot_logfile: /var/log/rsnapshot
 rsnapshot_lockfile: /var/run/rsnapshot.pid
 # rsync_short_args       -a
 # rsync_long_args        --delete --numeric-ids --relative --delete-excluded
+rsnapshot_ssh_args: ""
 # ssh_args       -p 22
 # ssh_args       -o BatchMode=yes
 # du_args        -csh
