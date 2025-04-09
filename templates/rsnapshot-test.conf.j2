@@ -18,7 +18,9 @@ cmd_logger	{{ rsnapshot_cmd_logger }}
 #linux_lvm_cmd_lvremove	/path/to/lvremove
 #linux_lvm_cmd_mount	/sbin/mount
 #linux_lvm_cmd_umount	/sbin/umount
+{% if rsnapshot_retain_hourly != "" %}
 retain		hourly	{{ rsnapshot_retain_hourly }}
+{% endif %}
 retain		daily	{{ rsnapshot_retain_daily }}
 retain		weekly	{{ rsnapshot_retain_weekly }}
 retain		monthly	{{ rsnapshot_retain_monthly }}
