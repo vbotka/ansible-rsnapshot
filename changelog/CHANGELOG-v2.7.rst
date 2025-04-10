@@ -24,6 +24,7 @@ Major Changes
   Add tasks/vars-auto.yml
   Add vars: rsnapshot_conf_vars, rsnapshot_config_template_vars,
   rsnapshot_config_template, rsnapshot_config_template_test
+* Add variables: freebsd_cached, freebsd_state, and freebsd_use_globs
 
 Minor Changes
 -------------

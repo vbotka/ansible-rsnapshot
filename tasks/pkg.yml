@@ -7,6 +7,9 @@
       when: freebsd_install_method | lower == 'packages'
       community.general.pkgng:
         name: "{{ rsnapshot_packages }}"
+        cached: "{{ freebsd_cached }}"
+        state: "{{ freebsd_state }}"
+        use_globs: "{{ freebsd_use_globs }}"
       register: result
       retries: "{{ freebsd_install_retries }}"
       until: result is succeeded
