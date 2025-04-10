@@ -1,6 +1,6 @@
 ---
 # defaults for vbotka.rsnapshot
-rsnapshot_role_version: 2.6.3
+rsnapshot_role_version: 2.7.0
 
 rsnapshot_install: true
 rsnapshot_supported_linux_family: [Debian, RedHat]
