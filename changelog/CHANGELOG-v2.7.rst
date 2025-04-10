@@ -18,6 +18,8 @@ Major Changes
   Supported Ansible 2.18
   Freebsd 13.4, 13.5, 14.1, 14.2
   Ubuntu +oracular
+* Split defaults/main.yml to files in defaults/main
+* Add list rsnapshot_conf_vars
 
 Minor Changes
 -------------
