@@ -19,7 +19,11 @@ Major Changes
   Freebsd 13.4, 13.5, 14.1, 14.2
   Ubuntu +oracular
 * Split defaults/main.yml to files in defaults/main
-* Add list rsnapshot_conf_vars
+* tasks/config.yml renamed to tasks/conf.yml
+* Add templates snapshot-auto*
+  Add tasks/vars-auto.yml
+  Add vars: rsnapshot_conf_vars, rsnapshot_config_template_vars,
+  rsnapshot_config_template, rsnapshot_config_template_test
 
 Minor Changes
 -------------

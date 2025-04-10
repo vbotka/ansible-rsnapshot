@@ -3,6 +3,7 @@
 rsnapshot_role_version: 2.7.0
 rsnapshot_supported_linux_family: [Debian, RedHat]
 rsnapshot_debug: false
+rsnapshot_debug2: false
 rsnapshot_backup_conf: false
 rsnapshot_snapshot_root_owner: root
 
