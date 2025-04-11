@@ -10,7 +10,7 @@ vbotka.rsnapshot 2.7 Release Notes
 
 Release Summary
 ---------------
-Major release.
+Major release. Add templates rsnapshot-auto*
 
 Major Changes
 -------------
@@ -20,7 +20,7 @@ Major Changes
   Ubuntu +oracular
 * Split defaults/main.yml to files in defaults/main
 * tasks/config.yml renamed to tasks/conf.yml
-* Add templates snapshot-auto*
+* Add templates rsnapshot-auto*
   Add tasks/vars-auto.yml
   Add vars: rsnapshot_conf_vars, rsnapshot_config_template_vars,
   rsnapshot_config_template, rsnapshot_config_template_test
@@ -29,6 +29,7 @@ Major Changes
 Minor Changes
 -------------
 * Add .gitignore
+* Update README.
 
 Bugfixes
 --------

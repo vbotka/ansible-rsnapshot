@@ -76,6 +76,111 @@ Run the play
 ansible-playbook rsnapshot.yml
 ```
 
+## Automatic collection of configuration variables
+
+The list *rsnapshot_conf_vars* keeps all configuration keys of *rsnapshot.conf*
+except *backup*. If you use the template
+
+```yaml
+rsnapshot_config_template: rsnapshot-auto.conf.j2
+```
+
+the tasks *tasks/vars-auto.yml*, selected from the dictionary,
+
+```yaml
+rsnapshot_config_template_vars:
+  rsnapshot-auto.conf.j2: vars-auto.yml
+  rsnapshot-auto-test.conf.j2: vars-auto.yml
+```
+
+collect all variables of the form *rsnapshot_<key>*, matching the keys from the
+list *rsnapshot_conf_vars*, and create the dictionary *rsnapshot_conf_dict*. For
+example,
+
+```yaml
+rsnapshot_conf_dict:
+  cmd_cp: /bin/cp
+  cmd_logger: /usr/bin/logger
+  cmd_rm: /bin/rm
+  cmd_rsync: /usr/local/bin/rsync
+  cmd_ssh: /usr/bin/ssh
+  config_version: '1.2'
+  link_dest: '1'
+  lockfile: /var/run/rsnapshot.pid
+  logfile: /var/log/rsnapshot
+  loglevel: '3'
+  no_create_root: '0'
+  retain_daily: '7'
+  retain_hourly: '6'
+  retain_monthly: '3'
+  retain_weekly: '4'
+  snapshot_root: /export/backup/snapshots
+  verbose: '2'
+```
+
+The default variables *rsnapshot_<key>* are provided by this role for enabled
+keys in the default configuration file. For example,
+*/usr/local/etc/rsnapshot.conf.default* in FreeBSD. See
+
+* OS independent variables *rsnapshot_<key>* in *defaults/main/conf.yml*
+* OS dependent variables *rsnapshot_<key>* in:
+
+  * vars/defaults/Debian.yml
+  * vars/defaults/FreeBSD.yml
+  * vars/defaults/RedHat.yml
+
+The template uses the dictionary *rsnapshot_conf_dict* together with the lists
+*rsnapshot_backup_points* and *rsnapshot_exclude* to create the configuration
+file *rsnapshot.conf*. For example,
+
+```bash
+cat /usr/local/etc/rsnapshot.conf
+# Ansible managed
+# rsnapshot-auto.conf.j2
+# PLEASE BE AWARE OF THE FOLLOWING RULE:
+# This file requires tabs between elements
+
+cmd_cp              /bin/cp
+cmd_logger	        /usr/bin/logger
+cmd_rm              /bin/rm
+cmd_rsync           /usr/local/bin/rsync
+cmd_ssh             /usr/bin/ssh
+config_version      1.2
+link_dest           1
+lockfile            /var/run/rsnapshot.pid
+logfile             /var/log/rsnapshot
+loglevel            3
+no_create_root      0
+retain		daily	7
+retain		hourly	6
+retain		monthly	3
+retain		weekly	4
+snapshot_root		/export/backup/snapshots
+verbose             2
+
+### BACKUP POINTS/SCRIPTS
+backup	/root/          localhost/
+backup	/home/          localhost/
+backup	/etc/           localhost/
+backup	/usr/local/etc/ localhost/
+
+### EXCLUDE
+exclude	.git/
+exclude	.#*
+```
+
+The same way is created *rsnapshot-test.conf* using the list
+*rsnapshot_backup_points_test* and the root for testing
+*rsnapshot_snapshot_root_test*.
+
+Feel free to create your own templates, tasks vars-*.yml, and update the
+dictionary *rsnapshot_config_template_vars*.
+
+## Local customization
+
+Put your local customization into the file *vars/main.yml*. This file is ignored
+by the CVS and is preserved on updating the role.
+
 
 ## Ansible lint
 
