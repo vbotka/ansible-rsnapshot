@@ -22,7 +22,7 @@ snapshot_root{{ tab }}{{ tab }}{{ rsnapshot_snapshot_root_test }}
 backup{{ tab }}{{ item.dir }}{{ tab }}{{ tab }}{{ item.host }}
 {% endfor %}
 
-### EXCLUDE 
+### EXCLUDE
 {% for item  in rsnapshot_exclude %}
 exclude{{ tab }}{{ item.regex }}
 {% endfor %}

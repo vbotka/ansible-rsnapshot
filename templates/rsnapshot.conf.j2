@@ -55,7 +55,7 @@ link_dest	{{ rsnapshot_link_dest }}
 backup	{{ item.dir }}	{{ item.host }}
 {% endfor %}
 
-### EXCLUDE 
+### EXCLUDE
 {% for item  in rsnapshot_exclude %}
 exclude	{{ item.regex }}
 {% endfor %}
