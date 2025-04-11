@@ -10,17 +10,7 @@ vbotka.rsnapshot 2.7 Release Notes
 
 Release Summary
 ---------------
-Bugfix release.
-
-Major Changes
--------------
-
-Minor Changes
--------------
-* Update README
-
-Bugfixes
---------
+Bugfix release. Fix README.
 
 
 2.7.0
