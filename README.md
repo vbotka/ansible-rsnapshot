@@ -93,7 +93,7 @@ rsnapshot_config_template_vars:
   rsnapshot-auto-test.conf.j2: vars-auto.yml
 ```
 
-collect all variables of the form *rsnapshot_<key>*, matching the keys from the
+collect all variables of the form *rsnapshot_\<key\>*, matching the keys from the
 list *rsnapshot_conf_vars*, and create the dictionary *rsnapshot_conf_dict*. For
 example,
 
@@ -118,30 +118,30 @@ rsnapshot_conf_dict:
   verbose: '2'
 ```
 
-The default variables *rsnapshot_<key>* are provided by this role for enabled
+The default variables *rsnapshot_\<key\>* are provided by this role for enabled
 keys in the default configuration file. For example,
 */usr/local/etc/rsnapshot.conf.default* in FreeBSD. See
 
-* OS independent variables *rsnapshot_<key>* in *defaults/main/conf.yml*
-* OS dependent variables *rsnapshot_<key>* in:
+* OS independent variables *rsnapshot_\<key\>* in *defaults/main/conf.yml*
+* OS dependent variables *rsnapshot_\<key\>* in:
 
-  * vars/defaults/Debian.yml
-  * vars/defaults/FreeBSD.yml
-  * vars/defaults/RedHat.yml
+  - vars/defaults/Debian.yml
+  - vars/defaults/FreeBSD.yml
+  - vars/defaults/RedHat.yml
 
 The template uses the dictionary *rsnapshot_conf_dict* together with the lists
 *rsnapshot_backup_points* and *rsnapshot_exclude* to create the configuration
 file *rsnapshot.conf*. For example,
 
 ```bash
-cat /usr/local/etc/rsnapshot.conf
+shell> cat /usr/local/etc/rsnapshot.conf
 # Ansible managed
 # rsnapshot-auto.conf.j2
 # PLEASE BE AWARE OF THE FOLLOWING RULE:
 # This file requires tabs between elements
 
 cmd_cp              /bin/cp
-cmd_logger	        /usr/bin/logger
+cmd_logger          /usr/bin/logger
 cmd_rm              /bin/rm
 cmd_rsync           /usr/local/bin/rsync
 cmd_ssh             /usr/bin/ssh
@@ -151,11 +151,11 @@ lockfile            /var/run/rsnapshot.pid
 logfile             /var/log/rsnapshot
 loglevel            3
 no_create_root      0
-retain		daily	7
-retain		hourly	6
-retain		monthly	3
-retain		weekly	4
-snapshot_root		/export/backup/snapshots
+retain      daily   7
+retain      hourly  6
+retain      monthly 3
+retain      weekly  4
+snapshot_root       /export/backup/snapshots
 verbose             2
 
 ### BACKUP POINTS/SCRIPTS

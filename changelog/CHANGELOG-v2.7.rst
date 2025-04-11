@@ -5,6 +5,14 @@ vbotka.rsnapshot 2.7 Release Notes
 .. contents:: Topics
 
 
+2.7.1
+=====
+
+Release Summary
+---------------
+Bugfix release. Fix README.
+
+
 2.7.0
 =====
 
