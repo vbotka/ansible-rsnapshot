@@ -1,6 +1,6 @@
 ---
-
 - name: "Test: DEBUG Print variables rsnapshot_debug={{ rsnapshot_debug }}"
+  when: rsnapshot_debug | bool
   vars:
     msg: |
       Enable test ............ rsnapshot_test ................ {{ rsnapshot_test }}
@@ -9,7 +9,6 @@
       Backup points test ..... rsnapshot_backup_points_test .. {{ rsnapshot_backup_points_test }}
   ansible.builtin.debug:
     msg: "{{ '{}'.format(msg) }}"
-  when: rsnapshot_debug | bool
 
 - name: "Test: Create test directory {{ rsnapshot_snapshot_root_test }}"
   ansible.builtin.file:
@@ -29,8 +28,10 @@
   loop: "{{ rsnapshot_backup_points_test }}"
 
 - name: "Test: Create test configuration {{ rsnapshot_config_file_test }}"
+  vars:
+    tab: "{{ '\t' }}"
   ansible.builtin.template:
-    src: rsnapshot-test.conf.j2
+    src: "{{ rsnapshot_config_template_test }}"
     dest: "{{ rsnapshot_config_file_test }}"
     owner: "{{ rsnapshot_config_file_owner }}"
     group: "{{ rsnapshot_config_file_group }}"
@@ -39,4 +40,3 @@
     validate: rsnapshot -c %s configtest
 
 # EOF
-...
