@@ -5,6 +5,24 @@ vbotka.rsnapshot 2.7 Release Notes
 .. contents:: Topics
 
 
+2.7.2
+=====
+
+Release Summary
+---------------
+Require the collection vbotka.freebsd. Optionally, use the role
+vbotka.ansible_lib instead.
+
+Major Changes
+-------------
+
+Minor Changes
+-------------
+* Use the role vbotka.ansible_lib instead of vbotka.freebsd.lib
+* Update README
+* Add vbotka.freebsd to collections in  meta/main.yml
+
+
 2.7.1
 =====
 
