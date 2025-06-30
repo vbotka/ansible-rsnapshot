@@ -1,5 +1,5 @@
 ---
-roles:
-  - name: vbotka.ansible_lib
 collections:
   - name: community.general
+  - name: vbotka.freebsd
+
