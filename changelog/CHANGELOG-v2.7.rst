@@ -5,6 +5,22 @@ vbotka.rsnapshot 2.7 Release Notes
 .. contents:: Topics
 
 
+2.7.3
+=====
+
+Release Summary
+---------------
+Maintenance update.
+
+Major Changes
+-------------
+
+Minor Changes
+-------------
+* Update README.
+* Add the collection vbotka.freebsd to the test's requirements.
+
+
 2.7.2
 =====
 
