@@ -17,6 +17,7 @@ Major Changes
 
 Minor Changes
 -------------
+* Update README.
 * Add the collection vbotka.freebsd to the test's requirements.
 
 
