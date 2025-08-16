@@ -5,6 +5,23 @@ vbotka.rsnapshot 2.7 Release Notes
 .. contents:: Topics
 
 
+2.7.4
+=====
+
+Release Summary
+---------------
+In the collection vbotka.freebsd use vbotka.freebsd.lib
+
+Major Changes
+-------------
+
+Minor Changes
+-------------
+* Add dictionary rsnapshot_ansible_lib; In the collection
+  vbotka.freebsd use vbotka.freebsd.lib
+* Update README.
+
+
 2.7.3
 =====
 
