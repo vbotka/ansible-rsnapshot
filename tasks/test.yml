@@ -29,7 +29,8 @@
 
 - name: "Test: Create test configuration {{ rsnapshot_config_file_test }}"
   vars:
-    tab: "{{ '\t' }}"
+    tab: |
+      '\t'
   ansible.builtin.template:
     src: "{{ rsnapshot_config_template_test }}"
     dest: "{{ rsnapshot_config_file_test }}"

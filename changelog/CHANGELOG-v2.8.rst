@@ -18,6 +18,8 @@ Major Changes
 Minor Changes
 -------------
 * Meta: Ansible 2.20
+* Convert ansible_* variables to ansible_facts
+* Improve lint jinja profile:basic tags:formatting
 
 
 2.8.0

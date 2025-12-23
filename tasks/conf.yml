@@ -9,7 +9,8 @@
 
 - name: "Configure: Create configuration {{ rsnapshot_config_file }}"
   vars:
-    tab: "{{ '\t' }}"
+    tab: |
+      '\t'
   ansible.builtin.template:
     src: "{{ rsnapshot_config_template }}"
     dest: "{{ rsnapshot_config_file }}"
