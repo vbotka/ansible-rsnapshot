@@ -5,6 +5,21 @@ vbotka.rsnapshot 2.8 Release Notes
 .. contents:: Topics
 
 
+2.8.1
+=====
+
+Release Summary
+---------------
+Ansible 2.20 upgrade.
+
+Major Changes
+-------------
+
+Minor Changes
+-------------
+* Meta: Ansible 2.20
+
+
 2.8.0
 =====
 
