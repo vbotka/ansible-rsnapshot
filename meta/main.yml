@@ -12,8 +12,8 @@ galaxy_info:
     - name: FreeBSD
       versions:
         - 13.5
-        - 14.2
         - 14.3
+        - 15.0
     - name: Ubuntu
       versions:
         - jammy
