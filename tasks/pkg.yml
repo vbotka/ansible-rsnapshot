@@ -1,6 +1,6 @@
 ---
 - name: FreeBSD
-  when: ansible_facts['os_family'] == 'FreeBSD'
+  when: ansible_facts.os_family == 'FreeBSD'
   block:
 
     - name: "Pkg: Install packages FreeBSD"
@@ -27,7 +27,7 @@
       delay: "{{ freebsd_install_delay }}"
 
 - name: "Pkg: Install packages Linux"
-  when: ansible_facts['os_family'] in rsnapshot_supported_linux_family
+  when: ansible_facts.os_family in rsnapshot_supported_linux_family
   ansible.builtin.package:
     name: "{{ item }}"
   loop: "{{ rsnapshot_packages }}"
